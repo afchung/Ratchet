@@ -1,4 +1,4 @@
-*.bin.out.pi
+*bin.out.pi
 *.bin.out
 *.dat
 *.log
@@ -32,3 +32,4 @@ asplos16/paper.out
 asplos16/paper.pdf
 asplos16/paper.bbl
 asplos16/paper.blg
+build/

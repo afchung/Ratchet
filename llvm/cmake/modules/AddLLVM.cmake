@@ -477,6 +477,12 @@ set (LLVM_TOOLCHAIN_TOOLS
   llvm-ar
   llvm-objdump
   )
+  
+function(export_executable_symbols target)
+  if (NOT MSVC) # MSVC's linker doesn't support exporting all symbols.
+    set_target_properties(${target} PROPERTIES ENABLE_EXPORTS 1)
+  endif()
+endfunction()
 
 macro(add_llvm_tool name)
   if( NOT LLVM_BUILD_TOOLS )
